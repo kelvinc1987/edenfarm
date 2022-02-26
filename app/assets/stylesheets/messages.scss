@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-Regular.ttf');
+    }
+.logo_container
+{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height: 20vh;
+    width:100vw;
+}
+
+.button_container 
+{ 
+    position:absolute;
+    display: flex;
+    align-items: flex-end;
+    height: 19vh;
+}
+
+.Inboxbutton 
+{
+    height: 50px;
+    width: 100px;
+    justify-content: center;
+    text-align: center;
+    font-family:'Montserrat', sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    background-color:khaki;
+    border-style: solid;
+    border-color:rgb(161, 106, 4);
+    padding-top: 2vh;
+    border-radius: 15px;
+}
+
+.sendMessagebutton
+{
+    height: 50px;
+    width: 200px;
+    justify-content: center;
+    text-align: center;
+    font-family:'Montserrat', sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    background-color:khaki;
+    border-style: solid;
+    border-color:rgb(161, 106, 4);
+    padding-top: 2vh;
+    border-radius: 15px;
+}
+
+.container 
+{
+    display:block;
+    margin: auto;
+    align-items: center;
+    background-color:wheat;
+    border-style: solid;
+    border-color:sienna;
+    width: 70vw;
+    height: 70vh;
+    overflow: scroll;
+}
+.message_container
+{
+    display: flex;
+    margin: auto;
+    border-style: solid;
+    border-color: sienna;
+    background-color:wheat;
+    width: 69vw;
+    height: 5vh;
+    font-family: 'Montserrat';
+    src: url('Montserrat-Regular.ttf');
+}
+
+.from
+{
+    padding: 10px;
+}
+.body
+{
+    padding: 10px;
+    overflow: hidden;
+}
+.received
+{
+    display: inline-flex;
+    margin:auto; 
+    height: 100px;
+    width: 300px;
+    justify-content: center;
+    text-align: center;
+    font-family:'Montserrat', sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    background-color:deepskyblue;
+    border-style: solid;
+    border-color:darkblue;
+    padding-top: 2vh;
+    border-radius: 15px;
+}
+
+.sent
+{
+    display: inline-flex;
+    margin:auto; 
+    height: 100px;
+    width: 300px;
+    justify-content: center;
+    text-align: center;
+    font-family:'Montserrat', sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    background-color:limegreen;
+    border-style: solid;
+    border-color:darkgreen;
+    padding-top: 2vh;
+    border-radius: 15px;
+}
+
+.new_reply
+{
+    justify-content: center;
+    text-align: center;
+    font-family:'Montserrat', sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+}

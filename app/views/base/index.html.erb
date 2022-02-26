@@ -1,0 +1,58 @@
+<%# 
+<div>
+<%=@records.each do | i |%>
+<%# <li>
+<%= i.phone_number %>
+<%# </li>
+<% end %>
+<%# </div>  %>
+
+<div> 
+
+
+<%=@records.each do | j |%>
+
+
+<% if j.id == "reckYhkbk1UkIzs2W" %>
+<li>
+<%= @Number = j.phone_number %>
+</li>
+<li>
+<%= j.last_contacted %>
+</li>
+<%end%>
+<%end%>
+
+<%=@table%>
+
+<h1>Phone Number </h1>
+<ul>
+
+<%=@records.each do | number |%>
+
+<li>
+    <a href="<%= base_path(number)%>">
+    <%= number.phone_number%>
+    
+    </a>
+    </li>
+    <%end%>
+</ul>
+
+<%=form_with  url:"/bases/text/send_text" do |form| %>
+
+
+<%= form.label :number %>
+
+<%= form.telephone_field :number %><br>
+
+
+<%= form.submit 'Search' %>
+<%end%>
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+<header>
+ 
+        <div class = "button_container">
+            <div class = "Inboxbutton">
+                <%= link_to "INBOX", "/messages/inbox", class: "button" %>
+            </div>
+            
+            <div class = "sendMessagebutton">
+                <%= link_to "Send Messages", "/", class: "button" %>
+            </div>
+        </div>
+
+   <div class = "logo_container">
+        <img src = "edensfarmlogo.png" width = "150" height = "150">
+    </div>
+
+</header>
+
+<body>
+    <div class="container">
+
+       
+
+        
+            <%@phoneHash.each do |key, value|%>                         <%#Loop over every key and value in the phoneHash%>
+            <div class = "message_container">
+            <%=key%>                                               <%#Print the key (the phone number%>
+        
+            <%=link_to value[0], messages_convo_path(:key => key, :value => value)%>  
+            <%#print the first element of value(the most recent message) as a link, pass key and value array as params to messages controller)%>
+            </div>
+            <% end %>
+        
+
+    
+       
+    
+    </div>
+</body>
+

@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@0,200;0,500;0,700;1,500&display=swap');
+
+header
+{
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    background-color: #78b5b5;
+    border-style: solid;
+    
+}
+
+body 
+{
+   height: 100vh;
+   width: 100vw;
+   display: flex;
+   justify-content: relative;
+   background-image: url(flowers.jpg);
+   background-position: relative;
+   background-size: cover;
+   background-repeat: no-repeat;
+   border-style: solid;
+   border-color: black;
+   flex-wrap: wrap;
+}
+
+.logo_container
+{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height: 20vh;
+    width:100vw;
+}
+    
+.button_container 
+{ 
+    position:absolute;
+    display: flex;
+    align-items: flex-end;
+    height: 19vh;
+}
+
+.Inboxbutton 
+{
+    height: 50px;
+    width: 100px;
+    justify-content: center;
+    text-align: center;
+    font-family:'Montserrat', sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    background-color:khaki;
+    border-style: solid;
+    border-color:rgb(161, 106, 4);
+    padding-top: 2vh;
+    border-radius: 15px;
+}
+
+.sendMessagebutton
+{
+    height: 50px;
+    width: 200px;
+    justify-content: center;
+    text-align: center;
+    font-family:'Montserrat', sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    background-color:khaki;
+    border-style: solid;
+    border-color:rgb(161, 106, 4);
+    padding-top: 2vh;
+    border-radius: 15px;
+}
+
+.container 
+{
+    display:flex;
+    margin: auto;
+    justify-content: relative;
+    background-color:wheat;
+    border-style: solid;
+    border-color:sienna;
+    width: 70vw;
+    height: 70vh;
+}
+
+.instruction 
+{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    border-style: solid;
+    border-color:teal;
+    background-color: #78b5b5;
+    font-family:'Montserrat', sans-serif;
+    font-weight: 100;
+    text-align: center;
+    width: 70vw;
+    height: 10vh;
+}   
+
+.threechoices 
+{
+    display: flex;
+    margin: auto;
+    justify-content:left;
+    border-style: solid;
+    border-color:sienna;
+    background-color:wheat;
+    font-family:'Montserrat', sans-serif;
+    font-weight: 500;
+    width: 70vw;
+    height: 8vh;
+}   
+
+
+

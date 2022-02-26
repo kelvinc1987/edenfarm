@@ -1,0 +1,134 @@
+
+<%=@records1%>
+<h1> Phone Numbers </h1>
+
+<% @numbers = []%>
+<% @records1.each do |number|%>
+<% @numbers << number.phone_number%>
+<% end %>
+
+<% @x = [] %>
+<% @numbers.each do |number|%>
+<% @x <<  ' {"binding_type":"sms", "address":"+1 %s "},  '% number %>
+
+<%end%>
+
+<%= @x %>
+<h1> Phone Numbers </h1>
+
+<% @date = []%>
+<% @number_date = []%>
+<% @records1.each do |number|%>
+<% if number.date_added >= "2021-12-01" && number.date_added <= "2021-12-05"%>
+<% @date << number.date_added%>
+<% @number_date << number.phone_number%>
+<%end%>
+
+<% end %>
+<%= @date %>
+<%= @number_date %>
+
+
+<% @y = [] %>
+<% @number_date.each do |number|%>
+<% @y <<  ' {"binding_type":"sms", "address":"+1 %s "},  '% number %>
+
+<%end%>
+
+<%= @y %>
+
+
+
+      
+<div class="container"> 
+    <%= form_with url: "/bases/twilio_number2" do |form| %>
+       
+        <div class="Choice">
+
+            <div class="body">
+            
+                <%= form.label :Specific, "All Numbers" %><br>
+            </div>
+
+                    <%= form.label "Specific Message" %><br>
+                    <%= form.text_field :text %><br>
+
+                <% @records2.each do | message |%>
+                       
+                        <% @msg = message.message %> 
+
+                    <%= form.radio_button :text, @msg %>
+                        <%= form.label  message.notes %><br>
+
+                       
+                    <% end%>
+            
+        </div>
+ 
+    <%= form.submit 'Send' %>
+    <%end%>
+ </div>
+
+
+
+
+ <div class="container"> 
+
+ <%= form_with url: "/bases/twilio_number3" do |form| %>
+
+<div class="Choice">
+                <div class="body">
+                    <%= form.label :By_date, "By Date" %><br>
+                </div>
+                 <div class="body">
+                    <%= form.label :By_date, "From:" %><br>
+                    <%= form.date_field :date%>
+                    <%= form.label :By_date2, "To:" %><br>
+                    <%= form.date_field :date2%>
+                  </div>
+            <%= form.label "Specific Message" %><br>
+                    <%= form.text_field :text %><br>
+
+                <% @records2.each do | message |%>
+                       
+                        <% @msg = message.message %> 
+
+                    <%= form.radio_button :text, @msg %>
+                        <%= form.label  message.notes %><br>
+
+                       
+                    <% end%>
+ </div>
+   <%= form.submit 'Send' %>
+    <%end%>
+ </div>
+
+
+ <div class="container">
+ <%= form_with url: "/bases/twilio_number" do |form| %>
+
+        <div class="Choice">
+           <div class="body">
+            <%= form.label :Specific, "Specific Number" %><br>
+            <%= form.text_field :number %><br>
+           
+               
+</div>
+
+                    <%= form.label "Specific Message" %><br>
+                    <%= form.text_field :text %><br>
+
+                <% @records2.each do | message |%>
+                       
+                        <% @msg = message.message %> 
+
+                    <%= form.radio_button :text, @msg %>
+                        <%= form.label  message.notes %><br>
+
+                       
+                        <% end%>
+               
+        </div>
+ <%= form.submit 'Send' %>
+<%end%>
+ </div>

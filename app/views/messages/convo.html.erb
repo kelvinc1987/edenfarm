@@ -1,0 +1,50 @@
+<header>
+ 
+        <div class = "button_container">
+            <div class = "Inboxbutton">
+                <%= link_to "INBOX", "/messages/inbox", class: "button" %>
+            </div>
+            
+            <div class = "sendMessagebutton">
+                <%= link_to "Send Messages", "/", class: "button" %>
+            </div>
+        </div>
+
+   <div class = "logo_container">
+        <img src = "edensfarmlogo.png" alt= "eden's farm logo" width = "150" height = "150">
+    </div>
+
+</header>
+
+<body>
+    <div class="container">
+
+        <div class = "new_reply">
+        <%=@keyparams%>                             <%#printing the key params (the phone number we just clicked on in inbox)%>
+        </div>
+
+        <div><br>
+        <%@valueparams.each do |i|%><br>                <%# Looping over the values in valueparams to display all the messages sent by that phone number%>
+            <div class = "received">
+            <%= i%>
+            </div><br>
+        <%end%>
+        </div><br>
+        <div class = "sent"><br>
+        Message 1
+        
+        </div>
+
+        <div class = "new_reply"><br><br>
+        <%= form_with url:"/messages/convoMessage", method: :post do |form| %>
+             <%=form.label :choice_specific, "Reply" %>
+                <%=form.text_field :number %>
+                <%= form.label "Reply" %><br>
+                <%= form.text_field :text %><br>
+
+            <%= form.submit 'Send' %>
+
+        <%end%>
+        </div>
+    </div>
+</body>

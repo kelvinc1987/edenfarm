@@ -1,0 +1,75 @@
+<header>
+ 
+        <div class = "button_container">
+            <div class = "Inboxbutton">
+                <%= link_to "INBOX", "/messages/inbox", class: "button" %>
+            </div>
+            
+            <div class = "sendMessagebutton">
+                <%= link_to "Send Messages", "/", class: "button" %>
+            </div>
+        </div>
+
+   <div class = "logo_container">
+        <img src = "edensfarmlogo.png" width = "150" height = "150">
+    </div>
+
+</header>
+
+<body>
+    <div class = "container">
+        
+            
+    <%= form_with url:"/bases/sendMessage", method: :post do |form| %>
+        <div>
+            <div class="instruction">
+                <h2>Choose recipient phone number(s)</h2><br>
+            </div>
+                
+            <div class="threechoices">
+                <%=form.radio_button :choice, "All Numbers" %>
+                <%=form.label :choice_all, "All Numbers" %>
+                <%=form.radio_button :choice, "By Date" %><br>
+                <%=form.label :choice_date, "By Date" %>
+                                
+                <%=form.label :By_date, "From:" %><br>
+                <%=form.date_field :date%>
+                <%=form.label :By_date2, "To:" %><br>
+                <%=form.date_field :date2%>
+                
+                                
+                <%=form.radio_button :choice, "Specific Number" %>
+                <%=form.label :choice_specific, "Specific Number" %>
+                <%=form.text_field :number %>
+                <br>
+            </div>
+                    
+            <div class="instruction">
+                <h2>Choose message to send</h2><br>
+            </div>
+
+            <div>
+                <%= form.label "Specific Message" %><br>
+                <%= form.text_field :text %><br>
+
+                    <% @records2.each do | message |%>
+                        <%# Add a scroll bar, just in case we have too many messages! %>
+                        <% @msg = message.message %> 
+                        <%= form.radio_button :text, @msg %>
+                        <%= form.label  message.notes %><br>
+            
+                    <% end%>
+                    
+            </div>
+
+            <%= form.submit 'Send' %>
+
+        </div>  
+
+    <%end%>
+    </div>
+
+    
+        
+    
+</body>
